@@ -5,15 +5,15 @@ import styled from "styled-components/native";
 import { Colors } from "../Colors";
 
 const StyledText = styled.Text`
-  font-size: 13px;
-  color: ${Colors.gray};
+  font-size: 15px;
+  color: ${Colors.white};
   text-align: left;
-  font-family: lato-Regular;
+  font-family: lato-Bold;
 `;
 
 import { TextProps } from "./types";
 
-const SmallText: FunctionComponent<TextProps> = (props) => {
+const RegularText: FunctionComponent<TextProps> = (props) => {
   return <StyledText style={props.textStyles}>{props.children}</StyledText>;
 };
-export default SmallText;
+export default RegularText;

@@ -1,7 +1,15 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import SplashScreen from "expo-splash-screen";
+import { useFonts } from "expo-font";
 import Welcome from "./screens/Welcome";
+import RootStack from "./components/Navigators/RootStack";
 
 export default function App() {
-  return <Welcome />;
+  let [fontsLoaded] = useFonts({
+    "lato-Bold": require("./assets/fonts/Lato-Bold.ttf"),
+    "lato-Regular": require("./assets/fonts/Lato-Regular.ttf"),
+  });
+  if (!fontsLoaded) {
+    return;
+  }
+  return <RootStack />;
 }
