@@ -35,7 +35,12 @@ const BottomSection = styled.View`
 // Image
 import background from "./../assets/bgs/background_v1.png";
 
-const Welcome: FunctionComponent = () => {
+//types
+import { RootStackParamList } from "../components/Navigators/RootStack";
+import { StackScreenProps } from "@react-navigation/stack";
+type Props = StackScreenProps<RootStackParamList, "Welcome">;
+
+const Welcome: FunctionComponent<Props> = ({ navigation }) => {
   return (
     <>
       <StatusBar style="light" />
@@ -50,7 +55,13 @@ const Welcome: FunctionComponent = () => {
           <SmallText textStyles={{ width: "70%", marginBottom: 25 }}>
             Best way to track your money
           </SmallText>
-          <RegularButton onPress={() => {}}>Get Started</RegularButton>
+          <RegularButton
+            onPress={() => {
+              navigation.navigate("Home");
+            }}
+          >
+            Get Started
+          </RegularButton>
         </BottomSection>
       </WelcomeContainer>
     </>
